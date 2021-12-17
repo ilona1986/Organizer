@@ -10,5 +10,8 @@ export class DataService implements moment.Moment {
   // @ts-ignore
   public date: BehaviorSubject<any> = new BehaviorSubject(moment());
 
-  constructor() { }
+ changeMonth(dir: number) {
+   const value = this.date.value.add(dir, 'month');
+   this.date.next(value);
+ }
 }

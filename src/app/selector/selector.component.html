@@ -1,11 +1,11 @@
 <p>
 
-  <i class="fas fa-arrow-left"></i>
+  <i class="fas fa-arrow-left" (click)="go(-1)"></i>
 
   <span>
     {{dateService.date | async | moment }}
   </span>
 
-  <i class="fas fa-arrow-right"></i>
+  <i class="fas fa-arrow-right" (click)="go(1)"></i>
 
 </p>
