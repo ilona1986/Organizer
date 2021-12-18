@@ -22,7 +22,7 @@ interface Week {
 export class CalendarComponent implements OnInit {
   public calendar: Week[] = [];
 
-  constructor(private dateService: DataService) {
+  constructor(public dateService: DataService) {
     this.calendar =[];
   }
 
@@ -53,5 +53,9 @@ export class CalendarComponent implements OnInit {
     }
 
     this.calendar = calendar;
+  }
+
+  select(day: moment.Moment) {
+    this.dateService.changeDate(day);
   }
 }
