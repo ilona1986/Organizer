@@ -7,6 +7,7 @@ import { OrganizerComponent } from './organizer/organizer.component';
 import { SelectorComponent } from './selector/selector.component';
 import { MomentPipe } from './shared/moment.pipe';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
