@@ -39,11 +39,14 @@ export class OrganizerComponent implements OnInit {
     }
 
     this.tasksService.create(task).subscribe(task => {
-         this.form.reset()
+      this.tasks.push(task)
+      this.form.reset()
     }, err => console.error(err))
   }
 
   remove(task: Task) {
-
+    this.tasksService.remove(task).subscribe(() => {
+      this.tasks = this.tasks.filter( t => t.id !== task.id)
+    }, err => console.error(err))
   }
 }
